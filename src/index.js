@@ -1,6 +1,9 @@
 import { Notify } from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-// import { fetchUrl } from './js/api/fetchImages';
+import { fetchUrl } from './api/fetchImages';
 const KEY = '35800613-7b32faaa33505b6c7b58566c2';
 const BASE_URL = 'https://pixabay.com/api/';
 // https://pixabay.com/api/?key=35800613-7b32faaa33505b6c7b58566c2&q
