@@ -35,6 +35,7 @@ async function onSubmit(ev) {
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
+    loadMore.style.display = 'none';
   } else {
     renderImages(response.hits);
     gallerySimpleBox.refresh();
