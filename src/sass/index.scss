@@ -55,7 +55,7 @@ p {
 }
 
 .search-form__input {
-  width: 200px;
+  width: 300px;
   height: 40px;
   padding: 10px;
 
@@ -73,7 +73,7 @@ p {
 }
 
 .search-form__button {
-  width: 100px;
+  width: 80px;
   height: 40px;
 
   font-size: 16px;
@@ -83,7 +83,7 @@ p {
   border-bottom-right-radius: 5px;
 
   cursor: pointer;
-  transition: background-color 300ms linear, color 300ms linear;
+  transition: background-color 250ms linear, color 250ms linear;
 
   &:hover,
   &:focus {
