@@ -36,12 +36,13 @@ async function onSubmit(ev) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
     loadMore.style.display = 'none';
-  } else {
+  }
+  if (response.totalHits > 0) {
     renderImages(response.hits);
     gallerySimpleBox.refresh();
     Notify.success(`Hooray! We found ${response.totalHits} images.`);
 
-    if (response.totalHits === response.hits.lenght) {
+    if (response.totalHits <= response.hits.lenght) {
       loadMore.style.display = 'none';
       Notify.failure(
         "We're sorry, but you've reached the end of search results."
