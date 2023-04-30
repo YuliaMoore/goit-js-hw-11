@@ -46,10 +46,11 @@ async function onSubmit(ev) {
         "We're sorry, but you've reached the end of search results."
       );
     } else {
-      loadMore.style.display = 'none';
+      loadMore.style.display = 'block';
     }
   }
 }
+
 function renderImages(images) {
   const markUp = images.map(image => {
     return `
@@ -71,7 +72,8 @@ function renderImages(images) {
   </div>
 </div>`;
   });
-  gallery.innerHTML += markUp.join('');
+  const fixMArkUP = markUp.join('');
+  gallery.innerHTML += fixMArkUP;
 }
 
 async function onClick() {
@@ -80,15 +82,17 @@ async function onClick() {
   const response = await fetchUrl(searchValue, pageNumber);
   renderImages(response.hits);
   if (response.totalHits === response.hits.length) {
-    loadMore.classList.add('is-hidden');
+    loadMore.style.display = 'none';
+
     Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
   }
+  scroll();
 }
 
 function refreshGallery() {
   gallery.innerHTML = '';
   pageNumber = 1;
-  loadMore.classList.add('is-hidden');
+  loadMore.style.display = 'none';
 }
