@@ -80,7 +80,7 @@ async function onClick() {
   const response = await fetchUrl(searchValue, pageNumber);
   renderImages(response.hits);
   if (response.totalHits === response.hits.length) {
-    loadMore.style.display = 'none';
+    loadMore.classList.add('is-hidden');
     Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
@@ -90,5 +90,5 @@ async function onClick() {
 function refreshGallery() {
   gallery.innerHTML = '';
   pageNumber = 1;
-  loadMore.style.display = 'none';
+  loadMore.classList.add('is-hidden');
 }
