@@ -59,8 +59,18 @@ p {
 
 /* photo-card */
 .photo-card {
+  margin-bottom: 10px;
+  width: 300px;
   border-left: 1px solid #eeeeeeb8;
   border-right: 1px solid #eeeeeeb8;
   border-bottom: 1px solid #eeeeeeb8;
   transition: box-shadow 250ms var(--timing-function);
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.info {
+  text-align: center;
+  font-size: 18px;
 }

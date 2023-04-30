@@ -2,6 +2,7 @@ import { Notify } from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import './sass/index.scss';
 
 import { fetchUrl } from './api/fetchImages';
 const KEY = '35800613-7b32faaa33505b6c7b58566c2';
@@ -55,19 +56,19 @@ function renderImages(images) {
   const markUp = images.map(image => {
     return `
 <div class="photo-card">
- <a href="${image.largeImageURL}"> <img class="photo-card__img" src="${image.webformatURL}" alt="${image.tags}" loading="lazy" width="320" height="212" /></a>
+ <a href="${image.largeImageURL}"> <img class="photo-card__img" src="${image.webformatURL}" alt="${image.tags}" loading="lazy" /></a>
   <div class="info">
     <p class="info-item">
-      <b>Likes: ${image.likes}</b>
+      <b>Likes: </b>${image.likes}
     </p>
     <p class="info-item">
-      <b>Views: ${image.views}</b>
+      <b>Views: </b>${image.views}
     </p>
     <p class="info-item">
-      <b>Comments: ${image.comments}</b>
+      <b>Comments: </b>${image.comments}
     </p>
     <p class="info-item">
-      <b>Downloads: ${image.downloads}</b>
+      <b>Downloads: </b>${image.downloads}
     </p>
   </div>
 </div>`;
