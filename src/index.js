@@ -31,29 +31,25 @@ async function onSubmit(ev) {
   const searchValue = form.elements.searchQuery.value;
 
   const response = await fetchUrl(searchValue, pageNumber);
-  if (response.hits.lenght === 0) {
+  if (response.hits.length === 0) {
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-    loadMore.style.display = 'none';
-  }
-  if (response.totalHits > 0) {
+  } else {
     renderImages(response.hits);
     gallerySimpleBox.refresh();
     Notify.success(`Hooray! We found ${response.totalHits} images.`);
 
-    if (response.totalHits <= response.hits.lenght) {
+    if (response.totalHits === response.hits.length) {
       loadMore.style.display = 'none';
       Notify.failure(
         "We're sorry, but you've reached the end of search results."
       );
     } else {
-      loadMore.style.display = 'block';
+      loadMore.style.display = 'none';
     }
   }
-  console.log(response);
 }
-
 function renderImages(images) {
   const markUp = images.map(image => {
     return `
