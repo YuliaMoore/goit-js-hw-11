@@ -21,7 +21,7 @@ form.addEventListener('submit', onSubmit);
 loadMore.addEventListener('click', onClick);
 
 let pageNumber = 1;
-loadMore.getElementsByClassName.display = 'none';
+loadMore.style.display = 'none';
 
 const gallerySimpleBox = new SimpleLightbox('.gallery a');
 
@@ -73,7 +73,7 @@ function renderImages(images) {
   </div>
 </div>`;
   });
-  gallery.innerHTML += markUp;
+  gallery.innerHTML += markUp.join('');
 }
 
 async function onClick() {
